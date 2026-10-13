@@ -1,0 +1,24 @@
+[project]
+name = "bing-webmaster-mcp"
+version = "0.1.0"
+description = "MCP server for Bing Webmaster Tools: search performance, crawl health, URL index status, sitemaps, backlinks, keyword research and URL submission (incl. IndexNow)."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Ritom Puzari", email = "ritom@puzaricloud.in" }]
+keywords = ["mcp", "bing", "bing-webmaster-tools", "seo", "indexnow", "claude", "model-context-protocol"]
+dependencies = ["mcp>=2.0,<3", "httpx>=0.27"]
+
+[project.urls]
+Homepage = "https://github.com/R1tom/bing-webmaster-mcp"
+"Hosted version" = "https://indexpulse.puzaricloud.in"
+
+[project.scripts]
+bing-webmaster-mcp = "bing_webmaster_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bing_webmaster_mcp"]
